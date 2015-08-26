@@ -20,6 +20,12 @@ NeoBundleLazy 'lambdalisue/vim-pager', {
         \}}
 ```
 
+If you want to convert ANSI sequence into Vim's highlight, checkout the following
+plugins. vim-pager will automatically call `:AnsiEsc` command when `:PAGER`
+command is called.
+
+- [vim-scripts/AnsiEsc.vim](https://github.com/vim-scripts/AnsiEsc.vim)
+- [powerman/vim-plugin-AnsiEsc](https://github.com/powerman/vim-plugin-AnsiEsc) (An improved AnsiEsc.vim)
 
 Usage
 -------------------------------------------------------------------------------

@@ -31,9 +31,11 @@ CONTENTS					*vim-pager-contents*
 
 Introduction			|vim-pager-introduction|
 Install				|vim-pager-install|
+  Recommends			|vim-pager-install-recommends|
 Usage				|vim-pager-usage|
 Interface			|vim-pager-interface|
   Commands			|vim-pager-interface-commands|
+  Variables			|vim-pager-interface-variables|
 
 ==============================================================================
 INTRODUCTION					*vim-pager-introduction*
@@ -63,6 +65,15 @@ plugin manager to install |vim-pager| like:
 If you are not using any vim plugin manager, you can copy the repository to
 your $VIM directory to enable the plugin.
 
+------------------------------------------------------------------------------
+RECOMMENDS					*vim-pager-install-recommends*
+
+vim-pager does not provide a way to convert the ANSI escape sequence into Vim
+highlight without external dependencies.
+If you prefer to highlight text rather than just remove, install
+vim-scripts/AnsiEsc.vim or powerman/vim-plugin-AnsiEsc.
+vim-pager automatically call :AnsiEsc command when :PAGER command is called.
+
 
 ==============================================================================
 USAGE						*vim-pager-usage*
@@ -83,5 +94,14 @@ COMMANDS					*vim-pager-interface-commands*
 :PAGER									*:PAGER*
 
 	Enable PAGER mode on the current buffer.
+
+------------------------------------------------------------------------------
+VARIABLES					*vim-pager-interface-variables*
+
+g:pager#use_AnsiEsc					  *g:pager#use_AnsiEsc*
+
+	Use vim-scripts/AnsiEsc.vim (or powerman/vim-plugin-AnsiEsc) to remove
+	ANSI sequences to enable ANSI highlight.
+	Default 1.
 
 vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
