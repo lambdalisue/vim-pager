@@ -14,7 +14,7 @@ function! s:remove_ansi_sequences() abort " {{{
   let &l:modified = saved_modified
 endfunction " }}}
 
-function! pager#enable(bang) abort " {{{
+function! pager#enable() abort " {{{
   call s:remove_ansi_sequences()
   setlocal tabstop=8
   setlocal nolist nospell nocursorline
