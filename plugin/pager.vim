@@ -21,7 +21,7 @@ function! pager#enable() abort " {{{
   setlocal readonly nomodifiable
   setlocal nomodified
   nnoremap <buffer><silent> <Plug>(pager-close) :<C-u>q<CR>
-  nmap q <Plug>(pager-close)
+  nmap <buffer> q <Plug>(pager-close)
 endfunction " }}}
 
 command! -nargs=0 PAGER call pager#enable()
