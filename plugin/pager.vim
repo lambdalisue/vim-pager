@@ -7,7 +7,7 @@ function! s:remove_ansi_sequences() abort " {{{
   let saved_modified = &l:modified
   setl modifiable noreadonly
   let saved_pos = getpos('.')
-  keepjumps :%s/\C\e\[\d\{1,3}[mK]//ge
+  keepjumps :%s/\v\e\[%(%(\d;)?\d{1,2})?[mK]//ge
   call setpos('.', saved_pos)
   let &l:modifiable = saved_modifiable
   let &l:readonly = saved_readonly
