@@ -1,0 +1,87 @@
+*vim-pager.txt*				A plugin to use Vim as a PAGER
+
+Version: 0.1.0
+Author:  Alisue <lambdalisue@hashnote.net>		*vim-pager-author*
+Support: Vim 7.4 and above
+License: MIT license
+
+    Copyright (c) 2014 Alisue, hashnote.net
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files
+    (the "Software"), to deal in the Software without restriction,
+    including without limitation the rights to use, copy, modify, merge,
+    publish, distribute, sublicense, and/or sell copies of the Software,
+    and to permit persons to whom the Software is furnished to do so,
+    subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+=============================================================================
+CONTENTS					*vim-pager-contents*
+
+Introduction			|vim-pager-introduction|
+Install				|vim-pager-install|
+Usage				|vim-pager-usage|
+Interface			|vim-pager-interface|
+  Commands			|vim-pager-interface-commands|
+
+==============================================================================
+INTRODUCTION					*vim-pager-introduction*
+
+Use Vim as a PAGER
+See lambdalisue/vim-manpager for MANPAGER
+
+==============================================================================
+INSTALL						*vim-pager-install*
+
+The repository (https://github.com/lambdalisue/vim-pager) follow a standard
+directory structure thus you can use Vundle.vim, neobundle.vim, or other vim
+plugin manager to install |vim-pager| like:
+>
+	" Vundle.vim
+	Plugin 'lambdalisue/vim-pager'
+
+	" neobundle.vim
+	NeoBundle 'lambdalisue/vim-pager'
+
+	" neobundle.vim (Lazy)
+	NeoBundleLazy 'lambdalisue/vim-pager', {
+		\ 'autoload': {
+		\   'commands': 'PAGER',
+		\}}
+<
+If you are not using any vim plugin manager, you can copy the repository to
+your $VIM directory to enable the plugin.
+
+
+==============================================================================
+USAGE						*vim-pager-usage*
+
+Add MANPAGER environment variable as
+>
+	$ export PAGER="vim -c PAGER -"
+<
+Then 'man' command will use Vim as a PAGER.
+
+
+==============================================================================
+INTERFACE					*vim-pager-interface*
+
+------------------------------------------------------------------------------
+COMMANDS					*vim-pager-interface-commands*
+
+:PAGER									*:PAGER*
+
+	Enable PAGER mode on the current buffer.
+
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
